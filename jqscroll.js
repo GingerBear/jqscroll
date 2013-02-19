@@ -1,7 +1,18 @@
 (function( $ ){
-  $.fn.jqscroll = function() {
     var contName, contIndex, contPosition = new Array();
+
+    // rebind the position of headers
+    $.fn.jqRebound = function() {
+        contPosition = [];
+        this.children('li').each(function(){
+            contName = '.'+$(this).attr("class").split(' ')[0]+'-cont';
+            contPosition.push($(contName).offset().top);
+        });
+    };
+    
+  $.fn.jqscroll = function() {
     var that = this;
+    
     this.children('li').each(function(){
       contName = '.'+$(this).attr("class")+'-cont';
       contPosition.push($(contName).offset().top);

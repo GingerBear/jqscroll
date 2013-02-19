@@ -7,7 +7,13 @@
     <script src="jqscroll.js"></script>
     <script language="javascript" type="text/javascript">
       $(document).ready(function(){ 
-        $('.jqscroll').jqscroll(70);
+        $('.jqscroll').jqscroll();
+        $('.add-more').click(function(){
+            $(this).parent().after($('p').first()).each(function(){
+                 $('.jqscroll').jqRebound();
+            });           
+            return false;
+        });
       });
     </script>
     <style type="text/css" media="screen">
@@ -50,6 +56,7 @@
       <p>Now that we have our shell we can start writing our actual plugin code. But before we do that, I'd like to say a word about context. In the immediate scope of the plugin function, the this keyword refers to the jQuery object the plugin was invoked on. This is a common slip up due to the fact that in other instances where jQuery accepts a callback, the this keyword refers to the native DOM element. This often leads to developers unnecessarily wrapping the this keyword (again) in the jQuery function.</p>
       <p>Now that we have our shell we can start writing our actual plugin code. But before we do that, I'd like to say a word about context. In the immediate scope of the plugin function, the this keyword refers to the jQuery object the plugin was invoked on. This is a common slip up due to the fact that in other instances where jQuery accepts a callback, the this keyword refers to the native DOM element. This often leads to developers unnecessarily wrapping the this keyword (again) in the jQuery function.</p>
       <p>Now that we have our shell we can start writing our actual plugin code. But before we do that, I'd like to say a word about context. In the immediate scope of the plugin function, the this keyword refers to the jQuery object the plugin was invoked on. This is a common slip up due to the fact that in other instances where jQuery accepts a callback, the this keyword refers to the native DOM element. This often leads to developers unnecessarily wrapping the this keyword (again) in the jQuery function.</p>
+      <p><a href="#" class='add-more'>Add more</a></p>
       <h2 class="b3-cont">Content #3</h2>
       <p>Now that we have our shell we can start writing our actual plugin code. But before we do that, I'd like to say a word about context. In the immediate scope of the plugin function, the this keyword refers to the jQuery object the plugin was invoked on. This is a common slip up due to the fact that in other instances where jQuery accepts a callback, the this keyword refers to the native DOM element. This often leads to developers unnecessarily wrapping the this keyword (again) in the jQuery function.</p>
       <p>Now that we have our shell we can start writing our actual plugin code. But before we do that, I'd like to say a word about context. In the immediate scope of the plugin function, the this keyword refers to the jQuery object the plugin was invoked on. This is a common slip up due to the fact that in other instances where jQuery accepts a callback, the this keyword refers to the native DOM element. This often leads to developers unnecessarily wrapping the this keyword (again) in the jQuery function.</p>

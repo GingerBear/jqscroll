@@ -18,9 +18,9 @@
       contPosition.push($(contName).offset().top);
     });
 
-    this.children('li').children('a').click(function(){
+    this.children('li').children('a').click(function(){      
       contIndex = $(this).parent().parent().children().index($(this).parent());
-      $('body').animate({scrollTop: contPosition[contIndex]-contPosition[0]}, 300);
+      $('body,html').animate({scrollTop: contPosition[contIndex]-contPosition[0]}, 300);
       return false;
     });
 
